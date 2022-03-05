@@ -1,0 +1,30 @@
+<!--pages/register/register.wxml-->
+<!-- <text>pages/register/register.wxml</text> -->
+<view class="button">
+    <text>输入注册信息：</text>
+</view>
+
+<view class="view-contain-ti">
+    <l-input model:value="{{ username }}" label="用户名" placeholder="请输入用户名" />
+</view>
+<view class="view-contain-ti">
+    <l-input model:value="{{ phonenum }}" label="手机号" placeholder="请输入手机号" />
+</view>
+<view class="view-contain-ti">
+    <l-input model:value="{{ password }}" label="密码" placeholder="请输入密码" />
+</view>
+<view class="view-contain-ti">
+    <l-input model:value="{{ gender }}" label="性别" placeholder="请输入性别" />
+</view>
+<view class="view-contain-ti">
+    <l-input model:value="{{ firstname }}" label="姓" placeholder="请输入姓" />
+</view>
+<view class="view-contain-ti">
+    <l-input model:value="{{ lastname }}" label="名" placeholder="请输入名" />
+</view>
+<view class="view-contain-ti">
+    <l-input model:value="{{ dateofbirth }}" label="出生日期" placeholder="请输入 如：2022-10-10" />
+</view>
+
+
+<l-button class="button" type="default" bindtap="doRegist">注册</l-button>

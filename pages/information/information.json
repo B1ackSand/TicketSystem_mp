@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "l-list": "lin-ui/list/index"
+  }
+}

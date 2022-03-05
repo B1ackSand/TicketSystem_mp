@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view>
+    <image class="bg" mode="widthFix"></image>
+    <view class="card">
+        <view class="font">
+            <text>输入查询信息：</text>
+        </view>
+
+        <view class="view-contain-ti">
+            <l-input class="input1" model:value="{{firststation}}" label="始发站" placeholder="广州站" />
+        </view>
+
+        <view class="view-contain-ti">
+            <l-input class="input1" model:value="{{laststation}}" label="终点站" placeholder="上海站" />
+        </view>
+
+        <view class="view-contain-ti">
+            <l-input class="input1" model:value="{{date}}" label="查询时间" />
+        </view>
+
+        <l-button class="button" type="default" bindtap="doSearch" width="595">提交</l-button>
+    </view>
+</view>
+    

@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "l-icon": "lin-ui/icon/index",
+    "l-button": "lin-ui/button/index",
+    "l-input": "lin-ui/input/index",
+    "l-popup": "lin-ui/popup/index"
+  },
+
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#4286F3",
+  "navigationBarTitleText": "搜索班次",
+  "navigationBarTextStyle": "white",
+  "backgroundColor": "#F5F5F5"
+}

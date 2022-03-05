@@ -1,0 +1,46 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.usermotto {
+  margin-top: 20rpx;
+}
+
+.font{
+  margin: 40rpx;
+}
+
+.button{
+  margin: 40rpx;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  height: 600rpx;
+  width: 90%;
+  border-radius: 20rpx;
+  margin-top: 200rpx auto;
+  margin-left: auto;
+  margin-right: auto;
+  background-color:#ffffff;
+}
+
+.bg{
+  width: 100%;
+  height: 400rpx;
+  background-image: url(https://img.blacksand.top/images/2022/03/05/index_topBg.png);
+}
+

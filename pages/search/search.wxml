@@ -1,0 +1,23 @@
+<!--pages/search/search.wxml-->
+
+<view class="font">当前时间：{{date}}</view>
+<view class="card" wx:for="{{array}}">
+    <view class="font" style="flex-direction:row;" bindtap="popUp" data-index="{{index}}">
+        <view>始发站：{{startTerminal}} </view>
+        <view>终点站：{{endTerminal}}</view>
+        <view>途径路线：{{item.stopStation}}</view>
+        <view>列车号：{{item.trainName}}</view>
+    </view>
+</view>
+
+<l-popup show="{{show}}" content-align="bottom">
+    <view class='bottom'>
+        <view class='pupop-mask'  bind:lintap='popDown'>
+            <view>始发站：{{startTerminal}}</view>
+            <view>终点站：{{endTerminal}}</view>
+            <view>途径路线：{{currentarray.stopStation}}</view>
+            <view>列车号：{{currentarray.trainName}}</view>
+            <l-button class="button" type="default" bindtap="doBook" width="200">订票</l-button>
+        </view>
+    </view>
+</l-popup>

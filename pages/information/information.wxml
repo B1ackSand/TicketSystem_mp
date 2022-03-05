@@ -1,0 +1,38 @@
+<!--pages/information/information.wxml-->
+<!-- <view>
+    手机号：
+    <text selectable>138000005</text>
+</view>
+
+<rich-text nodes="<h1 style='color: red;'>标题</h1>"></rich-text> -->
+
+<block>
+    <view class="contaner">
+        <view class="font">
+            <l-list wx:if="{{loginflag == false}}" bindtap="jumpToLogin" title="用户信息" desc="{{name}}" />
+            <l-list wx:if="{{loginflag}}" title="{{name}}" desc="{{phonenum}}" />
+        </view>
+    </view>
+
+    <view class="contaner" wx:if="{{loginflag == false}}" bindtap="jumpToLogin">
+        <view class="font">
+            <l-list title="登录账号" />
+        </view>
+    </view>
+
+
+    <view class="contaner" wx:else="{{loginflag}}">
+        <view class="font" bindtap="checkOrder">
+            <l-list title="历史行程" />
+        </view>
+        <view class="contaner;font;" bindtap="logOut">
+            <l-list title="退出登录" />
+        </view>
+    </view>
+
+    <view class="contaner" wx:if="{{loginflag == false}}" bindtap="jumpToReg">
+        <view class="font">
+            <l-list wx:if="{{loginflag == false}}" title="注册账号" />
+        </view>
+    </view>
+</block>

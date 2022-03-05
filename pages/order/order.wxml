@@ -1,0 +1,9 @@
+<!--pages/order/order.wxml-->
+<view class="card" wx:for="{{getarray}}">
+    <view class="font" style="flex-direction:row;" bindtap="popUp" data-index="{{index}}">
+        <view>购票时间：{{item.createdDate}} </view>
+        <view>始发站：{{item.startTerminal}} </view>
+        <view>终点站：{{item.endTerminal}}</view>
+        <view>列车号：{{item.trainName}}</view>
+    </view>
+</view>

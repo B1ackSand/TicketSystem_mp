@@ -1,0 +1,38 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+.view-contain-ti {
+  display: flex;
+  height: 40px;
+  margin: 20px;
+  border: 3rpx solid #faca82;
+  border-radius: 10rpx;
+  background-color:#ffffff;
+}
+
+.text-ti {
+  position: absolute;
+  font-size: 12px;
+  background: white;
+  margin: -10px 0 0 10px;
+  padding: 0 5px;
+  color: rgb(144, 147, 167);
+  
+}
+
+.input1 {
+  margin:  auto 10px;
+  
+}
+
+.page {
+  background-color: #F5F5F5;
+}
