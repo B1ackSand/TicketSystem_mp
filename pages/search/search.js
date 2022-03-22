@@ -15,7 +15,9 @@ Page({
         trainid: '',
         date: '',
         show: false,
-        obj: ''
+        obj: '',
+        policy:'',
+        iknow:true
     },
 
     //自定义函数
@@ -60,6 +62,33 @@ Page({
         }
     },
 
+    showPolicy(){
+        wx.request({
+            url: 'https://wx.wind.com.cn/alert/traffic/getPolicy',
+            method: 'GET',
+            data: {
+                city: this.data.endTerminal.substring(0, this.data.endTerminal.length - 1)
+            },
+            header: {
+                'content-type': 'application/json',
+                'Accept': 'application/json'
+            },
+            success: (res) => {
+                if (res.statusCode == 200) {
+                    console.log(res)
+                    this.setData({
+                        policy:res.data.data.enterPolicy
+                    })
+                } else {
+                    wx.showToast({
+                        title: '失败',
+                        icon: "none"
+                    })
+                }
+            }
+        })
+    },
+
     popUp: function (e) {
         var serverUrl = app.serverUrl;
         var idx = parseInt(e.currentTarget.dataset.index)
@@ -96,6 +125,12 @@ Page({
     popDown() {
         this.setData({
             show: false
+        })
+    },
+
+    iKnowPolicy(){
+        this.setData({
+            iknow: false
         })
     },
 
@@ -173,6 +208,7 @@ Page({
             date: prevPage.data.date
         });
 
+        this.showPolicy();
         this.handleIncorrectData();
         wx.request({
             url: serverUrl + '/stations/stationName',
@@ -227,7 +263,7 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-
+        
     },
 
     /**

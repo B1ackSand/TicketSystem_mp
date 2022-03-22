@@ -5,12 +5,15 @@
 </view>
 
 <view class="view-contain-ti">
-    <l-input class="input1" model:value="{{phonenum}}" label="手机号" type="number" placeholder="请输入手机号" clear="{{true}}"/>
+    <l-input class="input1" model:value="{{phonenum}}" label="手机号" type="number" placeholder="输入手机号" clear="{{true}}"/>
 </view>
 
 <view class="view-contain-ti">
-    <l-input class="input1" model:value="{{password}}" label="密码" type="password" placeholder="请输入密码" clear="{{true}}"/>
+    <l-input class="input1" model:value="{{password}}" label="密码" type="password" placeholder="输入密码" clear="{{true}}"/>
 </view>
 
+<view class="view-contain-ti">
+    <l-input class="input1" model:value="{{cardid}}" label="后4位身份证" type="" placeholder="如 3710" clear="{{true}}"/>
+</view>
 
 <l-button class="button" type="default" bindtap="doLogin" width="670">提交</l-button>

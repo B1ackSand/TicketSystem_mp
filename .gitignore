@@ -2,6 +2,7 @@
 miniprogram_npm
 node_modules
 .vscode
+.idea
 
 # 避免提交的文件
 yarn.lock

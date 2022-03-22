@@ -1,6 +1,15 @@
 <!--pages/search/search.wxml-->
 
 <view class="font">当前时间：{{date}}</view>
+<l-popup show="{{iknow}}" content-align="center" locked="{{iknow}}">
+    <scroll-view class="policy" scroll-y="true">
+        <view>目标地区疫情防控政策：</view>
+        <view class="font3">{{policy}}</view>
+        <l-button type="warning" bindtap="iKnowPolicy">我知道了</l-button>
+        <br />
+    </scroll-view>
+</l-popup>
+
 <view class="card" wx:for="{{array}}">
     <view class="font" style="flex-direction:row;" bindtap="popUp" data-index="{{index}}">
         <view>始发站：{{startTerminal}} </view>
@@ -11,8 +20,8 @@
 </view>
 
 <l-popup show="{{show}}" content-align="bottom">
-    <view class='bottom'>
-        <view class='pupop-mask'  bind:lintap='popDown'>
+    <view class='bottom' style="text-align: center;">
+        <view class="pupop-mask" bind:lintap="popDown">
             <view>始发站：{{startTerminal}}</view>
             <view>终点站：{{endTerminal}}</view>
             <view>途径路线：{{currentarray.stopStation}}</view>

@@ -8,13 +8,14 @@ Page({
    */
   data: {
     phonenum: "",
-    password: ""
+    password: "",
+    cardid:""
   },
 
   //自定义函数
   doLogin: function (e) {
     var serverUrl = app.serverUrl;
-    if (this.data.phonenum.length == 0 || this.data.password.length == 0) {
+    if (this.data.phonenum.length === 0 || this.data.password.length === 0) {
       wx.showToast({
         title: '用户名或密码不能为空',
         icon: "none",
@@ -29,14 +30,15 @@ Page({
         method: 'POST',
         data: {
           phonenum: this.data.phonenum,
-          bookerpwd: this.data.password
+          bookerpwd: this.data.password,
+          cardid: this.data.cardid
         },
         header: {
           'content-type': 'application/json',
           'Accept': 'application/json'
         },
         success: (res) => {
-          if (res.statusCode == 200) {
+          if (res.statusCode === 200) {
             wx.showToast({
               title: '登陆成功',
               icon: "success"
