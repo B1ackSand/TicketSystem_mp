@@ -1,8 +1,5 @@
 <!--pages/register/register.wxml-->
 <!-- <text>pages/register/register.wxml</text> -->
-<view class="button">
-    <text>输入注册信息：</text>
-</view>
 
 <view class="view-contain-ti">
     <l-input model:value="{{ username }}" label="用户名" placeholder="请输入用户名" />
@@ -24,6 +21,9 @@
 </view>
 <view class="view-contain-ti">
     <l-input model:value="{{ dateofbirth }}" label="出生日期" placeholder="请输入 如：2022-10-10" />
+</view>
+<view class="view-contain-ti">
+    <l-input model:value="{{ cardid }}" label="身份证号" placeholder="请输入身份证号码" />
 </view>
 
 

@@ -1,9 +1,9 @@
 <!--pages/search/search.wxml-->
 
-<view class="font">当前时间：{{date}}</view>
+<view class="font">当前查询时间：{{date}}</view>
 <l-popup show="{{iknow}}" content-align="center" locked="{{iknow}}">
     <scroll-view class="policy" scroll-y="true">
-        <view>目标地区疫情防控政策：</view>
+        <view>目标地区({{endTerminal}})疫情防控政策：</view>
         <view class="font3">{{policy}}</view>
         <l-button type="warning" bindtap="iKnowPolicy">我知道了</l-button>
         <br />
@@ -12,20 +12,32 @@
 
 <view class="card" wx:for="{{array}}">
     <view class="font" style="flex-direction:row;" bindtap="popUp" data-index="{{index}}">
-        <view>始发站：{{startTerminal}} </view>
-        <view>终点站：{{endTerminal}}</view>
-        <view>途径路线：{{item.stopStation}}</view>
-        <view>列车号：{{item.trainName}}</view>
+        <l-grid show-col-border="true">
+            <l-grid-item key="three" slot="three">
+                <view class="num">{{item.trainName}}</view>
+                <view class="text">列车号</view>
+            </l-grid-item>
+            <l-grid-item key="one" slot="one">
+                <view class="startTerminal">{{startTerminal}}</view>
+                <view class="text">始发站</view>
+            </l-grid-item>
+            <l-grid-item key="two" slot="two">
+                <view class="endTerminal">{{endTerminal}}</view>
+                <view class="text">终点站</view>
+            </l-grid-item>
+        </l-grid>
+        <view class="text2">途径路线：{{item.stopStation}}</view>
     </view>
 </view>
 
 <l-popup show="{{show}}" content-align="bottom">
     <view class='bottom' style="text-align: center;">
         <view class="pupop-mask" bind:lintap="popDown">
-            <view>始发站：{{startTerminal}}</view>
-            <view>终点站：{{endTerminal}}</view>
+            <view>始发站：{{startTerminal}}终点站：{{endTerminal}}</view>
             <view>途径路线：{{currentarray.stopStation}}</view>
             <view>列车号：{{currentarray.trainName}}</view>
+            <view>票价：￥{{price}}</view>
+            <view>发车时间：{{date}} {{departureTime}}</view>
             <l-button class="button" type="default" bindtap="doBook" width="200">订票</l-button>
         </view>
     </view>

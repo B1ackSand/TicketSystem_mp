@@ -12,7 +12,8 @@ Page({
         firstname: '',
         lastname: '',
         gender: '',
-        dateofbirth: ''
+        dateofbirth: '',
+        cardid:''
     },
 
     //自定义函数
@@ -30,7 +31,7 @@ Page({
                 url: serverUrl + '/bookers',
                 method: 'POST',
                 data: {
-                    bookerWx: "0",
+                    cardId: this.data.cardid,
                     userName: this.data.username,
                     bookerPwd: this.data.password,
                     phoneNum: this.data.phonenum,

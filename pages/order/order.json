@@ -3,7 +3,9 @@
     "l-icon": "lin-ui/icon/index",
     "l-button": "lin-ui/button/index",
     "l-input": "lin-ui/input/index",
-    "l-popup": "lin-ui/popup/index"
+    "l-popup": "lin-ui/popup/index",
+    "l-grid": "lin-ui/grid/index",
+    "l-grid-item": "lin-ui/grid-item/index"
   },
   "backgroundTextStyle": "light",
   "navigationBarBackgroundColor": "#4286F3",

@@ -15,7 +15,8 @@ App({
   },
 
   //服务器的路径
-  serverUrl: "https://ticket.blacksand.top/api",
+  // serverUrl: "https://ticket.blacksand.top/api",
+  serverUrl: "http://localhost:7162/api",
   // //该函数为将用户信息存入手机的缓存中
   // setGlobalUserInfo:function(user){
   //   wx.setStorageSync("userInfo", user);

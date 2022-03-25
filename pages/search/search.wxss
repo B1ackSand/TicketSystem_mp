@@ -1,13 +1,13 @@
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-    height: 200rpx;
+    height: 220rpx;
     width: 100%;
     border-radius: 20rpx;
     margin-top: 20rpx;
 }
 
-.policycard{
+.policycard {
     text-align: center;
 }
 
@@ -20,7 +20,7 @@
     text-align-last: right;
 }
 
-.font3{
+.font3 {
     white-space: pre-line;
     text-align: left;
     margin-left: 20rpx;
@@ -47,9 +47,9 @@
 .bottom {
     width: 100%;
     background: #fff;
-    height: 400rpx;
+    height: 460rpx;
     overflow: hidden;
-    
+
     line-height: 75rpx;
     font-size: 28rpx;
     color: #555;
@@ -67,4 +67,47 @@
     margin: 100rpx auto;
     line-height: 72rpx;
     text-align: center;
+}
+
+.startTerminal{
+    color: #6270eb;
+    font-size: 42rpx;
+    font-style: normal;
+}
+
+.endTerminal{
+    color: #eb3e72;
+    font-size: 42rpx;
+    font-style: normal;
+}
+
+.num {
+    color: #fc6517;
+    font-size: 42rpx;
+    font-style: italic;
+}
+
+.text {
+    height: 30rpx;
+    font-size: 22rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 500;
+    color: rgba(102, 102, 102, 1);
+    line-height: 80rpx;
+    margin-top: 17rpx auto;
+}
+
+.text2 {
+    height: 30rpx;
+    font-size: 30rpx;
+    font-family: PingFangSC-Regular;
+    font-weight: 500;
+    color: rgba(102, 102, 102, 1);
+    line-height: 80rpx;
+    margin-top: 17rpx auto;
+    margin-left: 15rpx;
+}
+
+.grid-item {
+    height: 200rpx;
 }

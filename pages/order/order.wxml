@@ -1,9 +1,35 @@
 <!--pages/order/order.wxml-->
 <view class="card" wx:for="{{getarray}}">
     <view class="font" style="flex-direction:row;" bindtap="popUp" data-index="{{index}}">
-        <view>购票时间：{{item.createdDate}} </view>
-        <view>始发站：{{item.startTerminal}} </view>
-        <view>终点站：{{item.endTerminal}}</view>
-        <view>列车号：{{item.trainName}}</view>
+        <l-grid show-col-border="true" row-num="3">
+            <l-grid-item key="one" slot="one">
+                <view class="startTerminal">{{item.startTerminal}}</view>
+                <view class="text">始发站</view>
+            </l-grid-item>
+            <l-grid-item key="two" slot="two">
+                <view class="endTerminal">{{item.endTerminal}}</view>
+                <view class="text">终点站</view>
+            </l-grid-item>
+            <l-grid-item key="three" slot="three">
+                <view class="endTerminal">{{item.trainName}}</view>
+                <view class="text">列车号</view>
+            </l-grid-item>
+        </l-grid>
+        <view class="text2" style="margin-bottom: 10rpx;">上车时间: {{item.dateBook}}</view>
+        <view class="text2">购票时间: {{item.createdDate}}</view>
     </view>
 </view>
+
+<l-popup show="{{show}}" content-align="bottom">
+    <view class='bottom' style="text-align: center;">
+        <view class="pupop-mask" bind:lintap="popDown">
+            <view style="text-align: left;margin-left: 45rpx; font-size: 40rpx;">订单详情：</view>
+            <view>订单号：{{currentarray.orderId}}</view>
+            <view>始发站：{{currentarray.startTerminal}}  终点站：{{currentarray.endTerminal}}</view>
+            <view>列车号：{{currentarray.trainName}}</view>
+            <view>票价：￥{{currentarray.price}}</view>
+            <view>上车时间：{{currentarray.dateBook}}</view>
+            <view>购票时间：{{currentarray.createdDate}}</view>
+        </view>
+    </view>
+</l-popup>

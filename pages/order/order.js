@@ -9,13 +9,23 @@ Page({
      */
     data: {
         getarray: '',
-        stationname: '1'
+        stationname: '1',
+        currentarray:''
     },
 
     //自定义函数
     getStationName: function (text) {
         var that = this;
 
+    },
+
+    popUp: function (e) {
+        var serverUrl = app.serverUrl;
+        var idx = parseInt(e.currentTarget.dataset.index)
+        this.setData({
+            currentarray: this.data.getarray[idx],
+            show: true
+        })
     },
 
 

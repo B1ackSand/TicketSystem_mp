@@ -101,7 +101,8 @@ Page({
     })
     this.setData({
       phonenum: this.data.phonenum,
-      password: this.data.password
+      password: this.data.password,
+      cardid: this.data.cardid
     })
   },
 

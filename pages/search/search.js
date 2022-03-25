@@ -16,8 +16,12 @@ Page({
         date: '',
         show: false,
         obj: '',
-        policy:'',
-        iknow:true
+        policy: '',
+        iknow: true,
+        distance: '',
+        price: '',
+        departureTime: '',
+        dateBook: ''
     },
 
     //自定义函数
@@ -45,7 +49,7 @@ Page({
                 }
             }
 
-            console.log(needHandle)
+            // console.log(needHandle)
 
             for (var i = 0; i < needHandle.length; i++) {
                 obj.splice(needHandle[i], 1);
@@ -55,14 +59,17 @@ Page({
                 array: obj
             })
 
-            console.log(obj)
+            // console.log(obj)
             // console.log(obj.length)
             //两条相反路线，起点站位置小的则为正确路线
             // console.log(obj[0].stopStation.split(',').indexOf("广州站"))
         }
     },
 
-    showPolicy(){
+    showPolicy() {
+        this.setData({
+            policy: '加载中...'
+        })
         wx.request({
             url: 'https://wx.wind.com.cn/alert/traffic/getPolicy',
             method: 'GET',
@@ -75,9 +82,9 @@ Page({
             },
             success: (res) => {
                 if (res.statusCode == 200) {
-                    console.log(res)
+                    // console.log(res)
                     this.setData({
-                        policy:res.data.data.enterPolicy
+                        policy: res.data.data.enterPolicy
                     })
                 } else {
                     wx.showToast({
@@ -120,6 +127,35 @@ Page({
                 }
             }
         })
+
+        wx.request({
+            url: app.serverUrl + '/getdistance',
+            method: 'GET',
+            data: {
+                stopStation: this.data.currentarray.stopStation,
+                startTerminal: this.data.currentarray.startTerminal,
+                endTerminal: this.data.currentarray.endTerminal,
+                typeOfTrain: this.data.currentarray.trainName
+            },
+            header: {
+                'content-type': 'application/json',
+                'Accept': 'application/json'
+            },
+            success: (res) => {
+                if (res.statusCode == 200) {
+                    this.setData({
+                        distance: res.data.distance,
+                        price: res.data.price.toFixed(2),
+                        departureTime: res.data.departureTime
+                    })
+                } else {
+                    wx.showToast({
+                        title: '失败',
+                        icon: "none"
+                    })
+                }
+            }
+        })
     },
 
     popDown() {
@@ -128,7 +164,7 @@ Page({
         })
     },
 
-    iKnowPolicy(){
+    iKnowPolicy() {
         this.setData({
             iknow: false
         })
@@ -144,7 +180,7 @@ Page({
             })
             app.sleep(3000)
             wx.redirectTo({
-              url: '../login/login',
+                url: '../login/login',
             })
         } else {
             wx.showLoading({
@@ -158,7 +194,9 @@ Page({
                     bookerId: this.data.obj.bookerId,
                     trainId: this.data.trainid,
                     startTerminalId: this.data.startTerminalid,
-                    endTerminalId: this.data.endTerminalid
+                    endTerminalId: this.data.endTerminalid,
+                    price: this.data.price,
+                    dateBook: this.data.date + ' ' + this.data.departureTime
                 },
                 header: {
                     'content-type': 'application/json',
@@ -172,7 +210,7 @@ Page({
                         })
                         app.sleep(2000)
                         wx.navigateBack({
-                          delta: 2,
+                            delta: 2,
                         })
                     } else {
                         wx.showToast({
@@ -263,7 +301,7 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-        
+
     },
 
     /**

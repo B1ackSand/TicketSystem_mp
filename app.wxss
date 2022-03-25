@@ -11,8 +11,8 @@
 
 .view-contain-ti {
   display: flex;
-  height: 40px;
-  margin: 20px;
+  height: 90rpx;
+  margin: 40rpx ;
   border: 3rpx solid #faca82;
   border-radius: 10rpx;
   background-color:#ffffff;
@@ -20,17 +20,16 @@
 
 .text-ti {
   position: absolute;
-  font-size: 12px;
+  font-size: 12rpx;
   background: white;
-  margin: -10px 0 0 10px;
-  padding: 0 5px;
+  margin: -10rpx 0 0 10rpx;
+  padding: 0 5rpx;
   color: rgb(144, 147, 167);
-  
 }
 
 .input1 {
-  margin:  auto 10px;
-  
+  margin-left: 10rpx;
+  margin-bottom: 10rpx auto;
 }
 
 .page {

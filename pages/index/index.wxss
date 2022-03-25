@@ -19,11 +19,18 @@
 }
 
 .font{
-  margin: 40rpx;
+  margin: 50rpx auto;
+}
+
+.text{
+  margin-left: 50rpx ;
 }
 
 .button{
   margin: 40rpx;
+}
+.button2{
+  margin-left: 40rpx;
 }
 
 .card {

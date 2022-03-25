@@ -3,7 +3,7 @@
     <image class="bg" mode="widthFix"></image>
     <view class="card">
         <view class="font">
-            <text>输入查询信息：</text>
+            <view class="text">输入查询信息：</view>
         </view>
 
         <view class="view-contain-ti">
@@ -17,8 +17,9 @@
         <view class="view-contain-ti">
             <l-input class="input1" model:value="{{date}}" label="查询时间" />
         </view>
-
-        <l-button class="button" type="default" bindtap="doSearch" width="595">提交</l-button>
+        <view class="button">
+            <l-button type="default" bindtap="doSearch" width="470">提交</l-button>
+            <l-button class="button2" icon="address" bindtap="doSwap" icon-size="38" icon-color="#000000" bg-color="#FFF" width="20"></l-button>
+        </view>
     </view>
 </view>
-    

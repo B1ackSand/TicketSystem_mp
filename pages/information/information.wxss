@@ -1,9 +1,9 @@
 /* pages/information/information.wxss */
 .contaner{
   background-color:#ffffff;
-  height: 90rpx;
+  height: 90rpx auto;
   width: 100%;
-  margin-top: 20rpx;
+  margin-top: 20rpx auto;
 }
 
 .font{

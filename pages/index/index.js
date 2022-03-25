@@ -23,6 +23,14 @@ Page({
     })
   },
 
+  doSwap(){
+    var temp = this.data.firststation;
+    this.setData({
+      firststation: this.data.laststation,
+      laststation: temp
+    })
+  },
+
   doSearch: function (e) {
     var serverUrl = app.serverUrl;
     if (this.data.firststation.length == 0 || this.data.laststation.length == 0) {
